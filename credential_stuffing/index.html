@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup Forms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Kakao Login -->
+        <div class="login-box kakao" id="kakao-login-box">
+            <h1>Kakao</h1>
+            <form action="kakao_login.php" method="POST">
+                <input type="text" placeholder="카카오메일 아이디, 이메일, 전화번호" name="kakao-id" required>
+                <input type="password" placeholder="비밀번호" name="kakao-password" required>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="login-info"> 간편로그인 정보 저장
+                        <span class="info">(i)</span>
+                    </label>
+                </div>
+                <button type="submit" class="login-btn kakao-btn">로그인</button>
+                <div class="separator">또는</div>
+                <button type="button" class="qr-login">QR코드 로그인</button>
+            </form>
+            <div class="links">
+                <a href="#" id="kakao-signup-link">회원가입</a> |
+                <a href="#">계정 찾기</a> |
+                <a href="#">비밀번호 찾기</a>
+            </div>
+        </div>
+
+        <!-- Kakao Signup Form (Initially Hidden) -->
+        <div class="login-box kakao" id="kakao-signup-box" style="display: none;">
+            <h1>Kakao 회원가입</h1>
+            <form action="kakao_signup.php" method="POST">
+                <input type="text" placeholder="이름" name="kakao-name" required>
+                <input type="text" placeholder="카카오 ID" name="kakao-signup-id" required>
+                <input type="email" placeholder="이메일" name="kakao-email" required>
+                <input type="password" placeholder="비밀번호" name="kakao-signup-password" required>
+                <button type="submit" class="login-btn kakao-btn">회원가입</button>
+            </form>
+            <div class="links">
+                <a href="#" id="kakao-back-to-login">로그인으로 돌아가기</a>
+            </div>
+        </div>
+
+        <!-- Naver Login -->
+        <div class="login-box naver" id="naver-login-box">
+            <h1>NAVER</h1>
+            <div class="tab-menu">
+                <button class="active">ID/전화번호</button>
+                <button>일회용 번호</button>
+                <button>QR코드</button>
+            </div>
+            <form action="naver_login.php" method="POST">
+                <input type="text" placeholder="아이디 또는 전화번호" name="naver-id" required>
+                <input type="password" placeholder="비밀번호" name="naver-password" required>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" checked> 로그인 상태 유지
+                    </label>
+                    <div class="ip-security">
+                        IP보안 <input type="checkbox" checked>
+                    </div>
+                </div>
+                <button type="submit" class="login-btn naver-btn">로그인</button>
+            </form>
+            <div class="links">
+                <a href="#" id="naver-signup-link">회원가입</a> |
+                <a href="#">아이디 찾기</a> |
+                <a href="#">비밀번호 찾기</a>
+            </div>
+        </div>
+
+        <!-- Naver Signup Form (Initially Hidden) -->
+        <div class="login-box naver" id="naver-signup-box" style="display: none;">
+            <h1>NAVER 회원가입</h1>
+            <form action="naver_signup.php" method="POST">
+                <input type="text" placeholder="이름" name="naver-name" required>
+                <input type="text" placeholder="아이디" name="naver-signup-id" required>
+                <input type="email" placeholder="이메일" name="naver-email" required>
+                <input type="password" placeholder="비밀번호" name="naver-signup-password" required>
+                <button type="submit" class="login-btn naver-btn">회원가입</button>
+            </form>
+            <div class="links">
+                <a href="#" id="naver-back-to-login">로그인으로 돌아가기</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
